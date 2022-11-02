@@ -7,24 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
-    <title>Ejercicio 1</title>
+    <title>Ejercicio 2</title>
 </head>
 
 <body>
-    <h3>1.Este programa muestra el signo zodiacal de una persona. <br>
-        Para ello el usuario debe introducir únicamente el día y <br>
-        el mes de nacimiento y el programa determinará inmediatamente <br>
-        el signo zodiacal de la persona.</h3>
-    <form id="form" action="api.php" method="post">
-        <label>Ingrese el día de nacimiento</label>
-        <input type="text" name="dia">
-        <label>Ingrese el mes de nacimiento</label>
-        <input type="text" name="mes">
-        <input type="submit" value="Zodiaco">
-    </form>
-    <pre id="resultado">
+    <div class="contenedor">
+        <h1>2. De la galería de productos, <br>
+            el usuario introducirá el código <br>
+            y el número de unidades del producto que desea comprar. <br>
+            El programa determinará el total a pagar, como una factura.</h1>
 
-    </pre>
+        <form id="form" action="api.php" method="post">
+            <input type="number" name="cod" placeholder=" Ingresa el código del producto" class="input">
+            <input type="number" name="cant" placeholder=" Ingresa la cantid del producto" class="input">
+            <input type="submit" value="pagar">
+        </form>
+        <h3 id="resultado">
+            <mark>El total a pagar es: </mark>
+        </h3>
+    </div>
 </body>
 
 </html>

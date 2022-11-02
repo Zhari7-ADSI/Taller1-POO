@@ -5,12 +5,34 @@
 }
 
 body {
-    padding: 25px;
-    background-color: rgb(211, 192, 231);
+    padding: 50px;
+    background-color: #9e8db9;
 }
 
-input {
+.contenedor {
+    background-color: rgb(207, 189, 226);
+    border-style: double;
+    border-radius: 30px;
+    margin: auto;
+    height: 450px;
+    width: 450px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 20px 20px 20px #000;
+}
+
+form {
+    padding: 15px;
+}
+
+.input {
+    text-align: center;
+    margin: 10px auto;
+    padding: 3px;
+    border: thin;
     display: block;
+    width: 37vh;
+    border-radius: 15px;
 }
 
 input[type="submit"] {
