@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sp">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -7,25 +7,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
-    <title>Ejercicio 2</title>
+    <title>Ejercicio 3</title>
 </head>
 
 <body>
-    <div class="contenedor">
-        <h1>2. De la galería de productos, <br>
-            el usuario introducirá el código <br>
-            y el número de unidades del producto que desea comprar. <br>
-            El programa determinará el total a pagar, como una factura.</h1>
 
-        <form id="form" action="api.php" method="post">
-            <input type="number" name="cod" placeholder=" Ingresa el código del producto" class="input">
-            <input type="number" name="cant" placeholder=" Ingresa la cantid del producto" class="input">
-            <input type="submit" value="pagar">
-        </form>
-        <h3 id="resultado">
-            <mark>El total a pagar es: </mark>
-        </h3>
-    </div>
+    <section class="seccion">
+
+        <div class="contenedor">
+            <h1>3. Escribir un programa que permita ingresar para los N alumnos de una universidad: SEXO (‘M’ o ‘F’),
+                edad y
+                carrera (‘A’,’B’,’C’). Imprimir la carrera con menor promedio de edad de sus alumnos que son varones
+            </h1>
+
+            <form id="form" class="form" action="api.php" method="post">
+
+                <label> <mark>Ingrese la cantidadestudiantes</mark> </label>
+                <div>
+                    <input type="number" id="cant" class="cant" name="cant" pattern="[0-9]+" required disabled>
+                </div>
+
+                <label> <mark>Ingrese el género del estudiante</mark> </label>
+                <div>
+                    <select name="genero" id="genero" required disabled>
+                        <option value=""></option>
+                        <option value="F">F</option>
+                        <option value="M">M</option>
+                    </select>
+                </div>
+
+                <label> <mark>Ingrese la edad del estudiante</mark> </label>
+                <div>
+                    <input type="number" id="edad" class="edad" name="edad" pattern="[0-9]+" required disabled>
+                </div>
+
+                <div>
+                    <label> <mark>Ingrese la carrera del estudiante</mark> </label>
+                    <select name="carrera" id="carrera" required disabled>
+                        <option value="" disabled selected></option>
+                        <option value="a">A</option>
+                        <option value="b">B</option>
+                        <option value="c">C</option>
+                    </select>
+                </div>
+
+                <div>
+                    <input type="submit">
+                </div>
+
+                <div class="resultado">La carrera con estudiantes de menor edad y varones es: <label
+                        id="resultado"></label></div>
+
+            </form>
+
+        </div>
+
+    </section>
 </body>
 
 </html>
