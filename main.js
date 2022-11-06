@@ -1,43 +1,49 @@
+let ventaMen = 0;
+let ventaMed = 0;
+let ventaSup = 0;
+let canMen = 0;
+let canMed = 0;
+let canSup = 0;
+let ventaTotal = 0;
+
+function sumaVentas(precio){
+    precio <= 500?
+        (ventaMen += precio, canMen ++):
+            precio <= 1000 && precio > 500?
+                (ventaMed += precio, canMed ++ ):
+                ( ventaSup += precio, canSup ++ );
+    ventaTotal = ventaMen + ventaMed + ventaSup;
+}
+
 addEventListener("DOMContentLoaded", (e) => {
-    let form = document.querySelector("#form");
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        let meses = document.querySelector("#meses").value;
-        let dato = new Date(meses);
-        let year,mes,dia;
-        var Pago = 10;
-        if (!!dato.valueOf()) {
-            year = dato.getFullYear();
-            mes = dato.getMonth() + 1;
-            dia = dato.getDate() + 1;
+    document.querySelector("#cantidad").removeAttribute("disabled");
+    document.querySelector("#cantidad").addEventListener("keyup", (e) => {
+        let Precio = document.querySelector("#precio");
+        if (e.target.value > 0) {
+            Precio.removeAttribute("disabled");
+        } else {
+            Precio.disabled = true;
         }
-
-        let Semana = ['Domingo', 
-        'Lunes', 
-        'Martes',
-        'Miércoles', 
-        'Jueves', 
-        'Viernes', 
-        'Sábado'];
-        
-        let Mes = ['Enero', 
-        'Febrero', 
-        'Marzo', 
-        'Abril', 
-        'Mayo', 
-        'Junio', 
-        'Julio', 
-        'Agosto', 
-        'Septiembre', 
-        'Octubre', 
-        'Noviembre', 
-        'Diciembre'];
-
-        for(let i=0;i<20;i++){
-            var indice = new Date(year, mes - 1, 16).getDay();
-            document.querySelector("#res").insertAdjacentHTML("beforeend",(`${Semana[indice]} del ${dia} de ${Mes[new Date(year, mes - 1, dia).getMonth()]} del ${(new Date(year, mes - 1, dia).getMonth()==0) ?++year : year} debe pagar ${Pago}<br>`));
-            Pago = Pago * 2;
-            mes++;
+    })
+    let con = 1;
+    let myform = document.querySelector("#form");
+    myform.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        let cantidad = document.querySelector("#cantidad").value;
+        let Precio = parseInt( document.querySelector("#precio").value);
+        document.querySelector("#cantidad").disabled = true;
+        if (con < cantidad) {
+            document.querySelector("#precio").value = "";
+            con += 1;
+            sumaVentas(Precio);
+        } else {
+            document.querySelector("#resultado").innerHTML = "";
+            sumaVentas(Precio);
+            document.querySelector("#resultado").insertAdjacentHTML
+                ("beforeend",`La cantidad de ventas superiores a 1000 es: ${canSup} y su Total respectivo sera: ${ventaSup} `+
+                `La cantidad de ventas superiores a 500 y menores a 1000 son ${canMed} y su monto respectivo es ${ventaMed} `+
+                `La cantidad de ventas menores a 500 son ${canMen} y su monto respectivo es ${ventaMen} `+
+                `La venta total es de ${ventaTotal}`);
         }
     })
 })

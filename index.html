@@ -7,26 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
-    <title>Ejercicio 4</title>
+    <title>Ejercicio 5</title>
 </head>
 
 <body>
 
-        <div class="contenedor">
-            <h1>4. Una persona adquirió un producto para pagar en 20 meses. El primer mes pagó $10, el segundo $20, el
-                tercero $40 y así sucesivamente. Realice un algoritmo para determinar cuánto debe pagar mensualmente y
-                el total de lo que pagó después de los 20 meses. (Investigación código DATE o DATATIME javaScricpt)
-            </h1>
+    <div class="contenedor">
+        <h1>5. Un empleado de la tienda “Tiki Taka” realiza N ventas durante el día, se requiere saber cuántas de ellas
+            fueron mayores a $1000, cuántas fueron mayores a $500 pero menores o iguales a $1000, y cuántas fueron
+            menores o iguales a $500. Además, se requiere saber el monto de lo vendido en cada categoría y de forma
+            global.
+        </h1>
 
-            <form id="form" class="form" action="api.php" method="post">
+        <form id="form" class="form" action="api.php" method="post">
 
-                <input type="number" name="meses" id="meses" placeholder="Ingresa la Cantidad de meses" required class="input">
+            <input type="number" id="cantidad" class="input" name="cantidad" placeholder="Ingrese la cantidad de ventas" required disabled>
+            <input type="number" id="precio" class="input" name="precio" placeholder="Ingrese el precio del producto" required disabled>
 
-                <input type="submit" class="btn">
-                <pre id="res"> </pre>
-            </form>
+            <input type="submit" class="btn" value="enviar">
 
-        </div>
+            <pre id="resultado"> </pre>
+        </form>
+
+    </div>
 </body>
 
 </html>

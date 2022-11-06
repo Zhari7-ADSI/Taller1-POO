@@ -4,8 +4,9 @@
     $_DATA = json_decode(file_get_contents("php://input"),true);
 
     class Pago{
-        public function __construct(){
+        public function __construct($lista){       
         }
+        public function Ventas():string{
     }
-    $lista = new Pago();
+}
 ?>

@@ -14,7 +14,7 @@ body {
     border-style: double;
     border-radius: 30px;
     margin: auto;
-    height: 500px;
+    height: 350px;
     width: 500px;
     padding: 15px;
     text-align: center;
@@ -24,6 +24,12 @@ body {
 div {
     padding: 5px;
     margin: 1px;
+}
+
+.input{
+    width: 350px;
+    display: block;
+    margin: auto;
 }
 
 .resultado {
