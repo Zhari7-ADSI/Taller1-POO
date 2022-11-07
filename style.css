@@ -14,7 +14,7 @@ body {
     border-style: double;
     border-radius: 30px;
     margin: auto;
-    height: 350px;
+    height: 400px;
     width: 500px;
     padding: 15px;
     text-align: center;
@@ -26,8 +26,8 @@ div {
     margin: 1px;
 }
 
-.input{
-    width: 350px;
+.cantidad, .precio{
+    width: 377px;
     display: block;
     margin: auto;
 }
